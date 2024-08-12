@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, orientation=landscape">
+    <title>猜数字</title>
+    <style>
+        body {
+            background-image: url('../9.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* 新增样式，将按钮容器居中并设置为 flex 布局，使其子元素（按钮）竖排排列 */
+      .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            width: 150px;
+            /* 增大按钮宽度 */
+            height: 50px;
+            /* 增大按钮高度 */
+        }
+
+        /* 修改开始游戏按钮颜色为红色 */
+        #startGameButton {
+            background-color: pink;
+        }
+
+        /* 修改帮助指南按钮颜色为绿色 */
+        #helpGuideButton {
+            background-color: green;
+        }
+
+        #banbenGuideButton {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoplay loop>
+        <source src="./obj_wo3DlMOGwrbDjj7DisKw_28481682270_c071_3672_d103_f50b08cb9f224109a61a8e62fa4d0503.mp3" type="audio/mpeg">
+
+      </audio>
+    <h2 align="center" style="color: yellow;font-size: 30px;" >猜数字</h2>
+
+    <div class="button-container">
+        <button id="startGameButton" onclick="startGame()">开始游戏</button>
+        <button id="helpGuideButton" onclick="helpGuide()">帮助指南</button>
+        <button id="banbenGuideButton" onclick="banbenGuide()">版本预告</button>
+    </div>
+
+    <script src="./猜数字.js"></script> 
+    <script>
+        // 禁止鼠标右键
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // 禁止 F12 键
+        document.addEventListener('keydown', function (e) {
+            if (e.keyCode === 123) {  // F12 的键码是 123
+                e.preventDefault();
+            } 
+        });
+    </script>
+</body>
+
+</html>
